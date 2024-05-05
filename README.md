@@ -1,4 +1,4 @@
-# jason-wis-quarkus 
+# jason-wis-quarkus
 
 This project uses Quarkus, the Supersonic Subatomic Java Framework.
 
