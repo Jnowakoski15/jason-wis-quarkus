@@ -1,0 +1,25 @@
+Download Page: https://developers.redhat.com/products/quarkus/download
+Repo: https://github.com/Jnowakoski15/jason-wis-quarkus
+
+Building jar
+./mvnw package
+java -jar ./target/quarkus-app/quarkus-run.jar
+
+Building Container image:
+podman build -f /src/main/dockerDockerfile.jvm -t <> .
+
+Add cool new feature:
+<dependency>
+    <groupId>org.apache.logging.log4j</groupId>
+    <artifactId>log4j-core</artifactId>
+    <version>2.12.1</version>
+</dependency>
+
+Add a feature:
+
+    @GET
+    @Path("/{name}")
+    public String hello(@PathParam("name") String name) {
+        return "Hello " + name;
+    }
+
