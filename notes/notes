@@ -1,9 +1,11 @@
 Download Page: https://developers.redhat.com/products/quarkus/download
 Repo: https://github.com/Jnowakoski15/jason-wis-quarkus
 
+
 Building jar
 ./mvnw package
 java -jar ./target/quarkus-app/quarkus-run.jar
+
 
 Building Container image:
 podman build -f /src/main/dockerDockerfile.jvm -t <> .
@@ -15,6 +17,7 @@ Add cool new feature:
     <version>2.12.1</version>
 </dependency>
 
+
 Add a feature:
 
     @GET
@@ -23,3 +26,29 @@ Add a feature:
         return "Hello " + name;
     }
 
+Inject env var
+
+    @ConfigProperty(name = "GREETING", defaultValue = "Hello")
+    String greeting;
+
+
+Singleton Serivce:
+
+    package net.nowakoski;
+
+import jakarta.inject.Singleton;
+
+@Singleton
+public class HealthService {
+
+    private boolean status = true;
+
+    public void setStatusDown() {
+        status = false;
+    }
+
+    public boolean isUp() {
+        return status;
+    }
+
+}
